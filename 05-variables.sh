@@ -1,13 +1,13 @@
 #!/bin/bash
 
-echo -s "please enter user name ::"
+echo "please enter user name ::"
 
-read $USERNAME
+read -s $USERNAME
 
-echo -s "entered username is :: $USERNAME"
+echo "entered username is :: $USERNAME"
 
-echo -s "please enter password ::"
+echo  "please enter password ::"
 
-read $PASSWORD
+read -s $PASSWORD
 
-echo -s "entered password is ::$PASSWORD"
+echo "entered password is ::$PASSWORD"
