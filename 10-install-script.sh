@@ -8,17 +8,18 @@ if [$USERID -ne 0]
 then
     echo "ERROR:: user is not the root user"
     exit 1
- fi
+fi
 
- dnf list installed mysql
- if [$? -ne 0]
+dnf list installed mysql
+if [$? -ne 0]
  then
    dnf install mysql -y
     if [$? -ne 0]
-    then 
-     echo "installation is....... failure"
-     else 
-     echo "installtion is........ success"
+      then 
+          echo "installation is....... failure"
+    fi 
+      else 
+          echo "installtion is........ success"
     fi
  else 
      echo "mysql is already installed"
