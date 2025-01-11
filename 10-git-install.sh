@@ -8,19 +8,19 @@ then
     exit 1
 fi
 
-dnf list installed mysql
+dnf list installed $1
 if [ $? -ne 0 ]
 then
-    dnf install mysql -y
+    dnf install $1 -y
     if [ $? -ne 0 ]
     then
-        echo "Installation is ...........failed"
+        echo "$1 Installation is ...........failed"
         exit 1
     else
-        echo "Installation is ...........Success"
+        echo "$1 is ...........Success"
     fi    
 else
-    echo "already exist"
+    echo "$1 already exist"
 fi
 
 
