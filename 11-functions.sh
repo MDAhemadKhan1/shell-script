@@ -5,10 +5,10 @@ UserId=$(id -u)
 Validate(){
     if [ $1 -ne 0 ]
     then
-        echo "......failed to install $2....."
+        echo "$2 failed....."
         exit 1
     else
-        echo "......$2 installed successfully......"
+        echo "$2 success......"
     fi
 }
 
@@ -25,5 +25,5 @@ then
     dnf install mysql -y
     Validate $? "Installing Mysql......."
 else
-    echo "mysql is already exist"
+    echo "$1 is already exist"
 fi        
