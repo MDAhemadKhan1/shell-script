@@ -9,6 +9,7 @@ Validate(){
         exit 1
     else
         echo "......$2 installed successfully......"
+    fi
 }
 
 if [ $UserId -ne 0 ]
