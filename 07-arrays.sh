@@ -6,4 +6,4 @@ echo ${Movies[1]}
 echo ${Movies[2]}
 
 echo ${Movies[@]}
-echo ${Movies$[#]}
+echo $#
