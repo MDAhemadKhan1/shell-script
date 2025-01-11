@@ -9,7 +9,7 @@ echo ${Movies[@]}
 #echo $0
 #echo $PWD 
 #echo $HOME
-echo $USER 
+#echo $USER.....Except user all are are working without connecting to server 
 #echo $$
 #sleep 60 &
 #echo $!
