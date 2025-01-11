@@ -1,13 +1,12 @@
 #!/bin/bash
 
-check_root(){
     UserId=$(id -u)
 
 if [ $UserId -ne 0 ]; then
     echo "you must need user root access"
     exit 1
 fi
-}
+
 validate(){
 
     dnf list installed $1
