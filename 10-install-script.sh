@@ -1,10 +1,5 @@
 #!/bin/bash
 
-R=\e[31m
-G=\e[32m
-N=\e[0m
-Y=\e[33m
-
 #command to find the user id (id -u)
 USERID=$(id -u)
 
@@ -21,12 +16,12 @@ then
    dnf install mysql -y
     if [$? -ne 0]
     then 
-     echo "installation is.......$R failure $N"
+     echo "installation is....... failure"
      else 
-     echo "installtion is........ $G success $N"
+     echo "installtion is........ success"
     fi
  else 
-     echo "$Y mysql is already installed $N"
+     echo "mysql is already installed"
 fi
 
 
