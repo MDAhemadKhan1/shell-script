@@ -20,7 +20,7 @@ fi
 
 dnf list installed mysql
 
-if [ $1 -ne 0]
+if [ $1 -ne 0 ]
 then
     dnf install mysql -y
     Validate $? "Installing Mysql......."
