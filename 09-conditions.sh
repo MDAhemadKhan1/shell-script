@@ -1,16 +1,12 @@
 #!/bin/bash
 
-echo "enter the number"
-read $number
+NUMBER=$1
 
-if [ $number -lt 10 ]
+# -gt, -lt, -eq, -ge, -le
 
+if [ $NUMBER -gt 100 ]
 then
-
-    echo "given number is less than 10"
-
+    echo "Given number is greater than 100"
 else
-
-    echo "given number is greater than 10"
-
+    echo "Given number is less than or equal to 100"
 fi
