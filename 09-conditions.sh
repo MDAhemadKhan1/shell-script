@@ -3,7 +3,7 @@
 echo "enter the number"
 read $number
 
-if [ $number < 10 ]
+if [ $number -lt 10 ]
 
 then
 
