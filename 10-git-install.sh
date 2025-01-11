@@ -8,19 +8,19 @@ then
     exit 1
 fi
 
-dnf list installed git
+dnf list installed mysql
 if [ $? -ne 0 ]
 then
-    dnf install git -y
+    dnf install mysql -y
     if [ $? -ne 0 ]
     then
-        echo "Git Installation is ...........failed"
+        echo "Installation is ...........failed"
         exit 1
     else
-        echo "Git Installation is ...........Success"
+        echo "Installation is ...........Success"
     fi    
 else
-    echo "git already exist"
+    echo "already exist"
 fi
 
 
