@@ -1,26 +1,28 @@
 #!/bin/bash
 
-    UserId=$(id -u)
+UserId=$(id -u)
 
-if [ $UserId -ne 0 ]; then
-    echo "you must need user root access"
+Validate(){
+    if [ $1 -ne 0 ]
+    then
+        echo "......failed to install $2....."
+        exit 1
+    else
+        echo "......$2 installed successfully......"
+}
+
+if [ $UserId -ne 0 ]
+then
+    echo "you must have root access for this script"
     exit 1
 fi
 
-validate(){
+dnf list installed mysql
 
-    dnf list installed $1
-if [ $? -ne 0 ]; then
-    dnf install $1 -y
-    if [ $? -ne 0 ]; then
-        echo "failed"
-        exit 1
-
-    else
-        echo "success"
-    fi
+if [ $1 -ne 0]
+then
+    dnf install mysql -y
+    Validate $? "Installing Mysql......."
 else
-    echo "already exist"
-fi
-
-}
+    echo "mysql is already exist"
+fi        
