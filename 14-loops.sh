@@ -2,6 +2,12 @@
 
 UserId=$(id -u)
 
+LOG_FOLDER="/var/log/shell-scripting/"
+LOG_FILE=$( echo $0 | cut -d "." -f1 )
+TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
+LOG_FILE_NAME="$LOG_FOLDER/$LOG_FILE-$TIMESTAMP.log"
+
+
 validate() {
     if [ $1 -ne 0 ]; then
         echo "$2......failed"
@@ -17,9 +23,9 @@ if [ $? -ne 0 ]; then
 fi
 
 for software in $@; do
-    dnf list installed $software
+    dnf list installed $software &>>$LOG_FILE_NAME
     if [ $? -ne 0 ]; then
-        dnf install $software -y
+        dnf install $software -y &>>$LOG_FILE_NAME
         validate $? "installing $software"
     else
         echo "$software already exist"
