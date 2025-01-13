@@ -37,6 +37,7 @@ then
         do 
 
         echo "deleting the files :: $file"
+        rm -rf $file
         echo "...........deleted the file :: $file..............."
 
         done <<< $Zip_File
