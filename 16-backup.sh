@@ -27,24 +27,27 @@ Files=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
 if [ -n $Files ]
 then
-    Zip_File="$DEST_DIR/applogs-$TIMESTAMP.zip"
-    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ $Zip_File
-    if [ -n $Files ]
-    then
-        "zipping the files is done...."
+    echo " files are :: $Files"
+    exit 1
 
-        while read -r file
-        do 
+#    o "deleting the files :: $file"
+#         rm -rf $file
+#         echo "...........deleted the file :: $file..............."
 
-        echo "deleting the files :: $file"
-        rm -rf $file
-        echo "...........deleted the file :: $file..............."
+#         done <<< $Files
+#         exit 1 Zip_File="$DEST_DIR/applogs-$TIMESTAMP.zip"
+#     find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ $Zip_File
+#     if [ -n $Files ]
+#     then
+#         "zipping the files is done...."
 
-        done <<< $Files
-        exit 1
-    else
-        "failed to zip the files"
-    fi        
+#         while read -r file
+#         do 
+
+#         ech
+#     else
+#         "failed to zip the files"
+#     fi        
 else 
     echo "there no files to zip"
 fi
