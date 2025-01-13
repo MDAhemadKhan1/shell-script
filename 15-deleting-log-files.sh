@@ -2,7 +2,7 @@
 
 USERID=(id -u)
 
-if [ $USERID -ne 0 ]; then
+if [ $USERID != 0 ]; then
     echo "you must have root access to rxecute this script"
     exit 1
 fi
