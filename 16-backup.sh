@@ -1,0 +1,51 @@
+#!/bin/bash
+
+SOURCE_DIR="/home/ec2-user/applogs"
+DEST_DIR="/home/ec2-user/archives"
+DAYS=$(3:-14)
+
+
+if [ $# -lt 2 ]
+then
+    echo "you need to have <SOURCE_DIRECTORY> and <DEST_DIRECTORY> to execue this script"
+    exit 1
+fi
+
+if [ ! -d $SOURCE_DIR ]
+then
+    echo "you need to have <SOURCE_DIRECTORY> please check "
+    exit 1
+fi
+
+if [ ! -d $DEST_DIR ]
+then
+    echo "you need to have <DEST_DIRECTORY> to execue this script"
+    exit 1
+fi
+
+Files=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
+
+if [ -n $Files ]
+then
+    Zip_File="$DEST_DIR/applogs-$TIMESTAMP.zip"
+    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ $Zip_File
+    if [ -n $Files ]
+    then
+        "zipping the files is done...."
+
+        while read -r file
+        do 
+
+        echo "deleting the files :: $file"
+        echo "...........deleted the file :: $file..............."
+
+        done <<< $Zip_File
+        exit 1
+    else
+        "failed to zip the files"
+    fi        
+else 
+    echo "there no files to zip"
+fi
+    
+
