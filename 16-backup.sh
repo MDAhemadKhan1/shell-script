@@ -23,8 +23,8 @@ then
     exit 1
 fi
 
-Files=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
-
+Files=$( find $SOURCE_DIR -name "*.log" -mtime +$DAYS )
+ 
 if [ -n $Files ]
 then
     echo " files are :: $Files"
