@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SOURCE_DIR="/home/ec2-user/applogs"
-DEST_DIR="/home/ec2-user/archives"
+SOURCE_DIR=$1
+DEST_DIR=$2
 DAYS=$(3:-14)
 
 
