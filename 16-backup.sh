@@ -34,7 +34,7 @@ if [ -n "$Files" ]; then
     echo "deleting the file "
     rm -rf $file
         echo "deleted the file "
-
+   done <<< $Zip_File
    else
    echo " failed to zip the file"
    fi
