@@ -28,7 +28,13 @@ if [ -n "$Files" ]; then
    if [ -n $Zip_File ];then
    echo "started zipping the files..."
    echo "zipping the files are done.."
-   exit 1
+  
+   while read -r file
+   do 
+    echo "deleting the file "
+    rm -rf $file
+        echo "deleted the file "
+        exit 1
    else
    echo " failed to zip the file"
    fi
