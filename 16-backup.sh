@@ -40,7 +40,7 @@ then
         rm -rf $file
         echo "...........deleted the file :: $file..............."
 
-        done <<< $Zip_File
+        done <<< $Files
         exit 1
     else
         "failed to zip the files"
