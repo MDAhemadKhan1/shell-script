@@ -25,7 +25,7 @@ fi
 
 Files=$( find $SOURCE_DIR -name "*.log" -mtime +$DAYS )
  
-if [ -f "$Files" ]
+if [ -n "$Files" ]
 then
     echo " files are :: $Files"
     exit 1
