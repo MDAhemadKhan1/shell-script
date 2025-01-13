@@ -9,7 +9,7 @@ SOURCE_DIR="/home/ec2-user/applogs/"
 # TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 # LOG_FILE_NAME="$LOG_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
-Files-to-delete=$(find . -name "*.log" -mtime +14) 
+Files-to-delete=$(find $SOURCE_DIR -name "*.log" -mtime +14) 
 while read -r file
 do 
 echo "files to delete :: $file"
