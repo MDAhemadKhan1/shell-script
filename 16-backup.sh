@@ -25,7 +25,7 @@ if [ -n "$Files" ]; then
     echo " files are :: $Files"
    Zip_File="$DEST_DIR/archives.logs-$TIMESTAMP.zip"
    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$Zip_File"
-   if [ -n $Zip_File ]
+   if [ -n $Zip_File ];then
    echo "started zipping the files..."
    echo "zipping the files are done.."
    exit 1
