@@ -10,7 +10,7 @@ while read -r line; do
     echo "usage is $Usage"
     Partition=$(echo $line | awk -F " " '{print $7f}')
     echo "partition is $Partition"
-    if [ $Usage -gt 5 ]; then
+    if [ $Usage -gt $Disk_Threshold ]; then
         echo "usage is:: $Usage for :: $Partition"
     fi
 
