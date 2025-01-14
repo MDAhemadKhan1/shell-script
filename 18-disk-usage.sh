@@ -13,5 +13,5 @@ while read -r line; do
 
 done <<< $Disk_Usage
 echo -e "msg is :: $MSG" 
-echo "This is a test mail & Date $(date)" | mutt -s "message" ahemadahemad15526@gmail.com
+echo "This is a test mail & Date $(date)" | mutt -s "message" ahemadaheamd15526@gmail.com
 # echo "$MSG" | mutt -s "High disk Usage" to 
