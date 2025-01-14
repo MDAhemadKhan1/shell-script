@@ -1,6 +1,6 @@
 #!/bin/bash
 
 MSG="hi from script1"
-source ./script2.sh
+source ./20-script2.sh
 echo "......msg is $MSG..."
 
