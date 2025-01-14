@@ -8,7 +8,7 @@ fi
 
 SOURCE_DIR="/var/log/applog"
 
-Files=$(find $SOURCE_DIR -name "*.log" -mtime 14)
+Files=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 
 if [ -n $Files ]; then
 
