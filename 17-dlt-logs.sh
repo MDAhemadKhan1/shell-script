@@ -6,7 +6,7 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi
 
-SOURCE_DIR="/var/log/applog"
+SOURCE_DIR="/home/ec2-user/var/log/applog/"
 
 Files=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 
@@ -23,5 +23,5 @@ if [ -n $Files ]; then
     done <<<$Files
     exit 1
 else
-    echo "here no files older than 14 days"
+    echo "there no files older than 14 days"
 fi
