@@ -10,7 +10,7 @@ SOURCE_DIR="/var/log/applog/"
 
 Files=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 
-if [ -n $Files ]; then
+if [ -f $Files ]; then
 
     echo "files are .....$Files"
 
