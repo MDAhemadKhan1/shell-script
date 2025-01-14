@@ -6,7 +6,7 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi
 
-SOURCE_DIR="/home/ec2-user/var/log/applog/"
+SOURCE_DIR="/home/ec2-user/applog/"
 
 Files=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 
