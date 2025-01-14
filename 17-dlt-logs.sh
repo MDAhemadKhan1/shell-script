@@ -6,11 +6,11 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi
 
-SOURCE_DIR="/home/ec2-user/applog/"
+SOURCE_DIR="/var/log/applog/"
 
 Files=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 
-if [ -n "$Files" ]; then
+if [ -n $Files ]; then
 
     echo "files are .....$Files"
 
